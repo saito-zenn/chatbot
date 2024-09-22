@@ -1,20 +1,27 @@
 import streamlit as st
 from openai import OpenAI
 
-# Show title and description.
-st.title("💬 Chatbot")
+# Show title and description.# 画像のパスを指定
+img_path = './saito_neko.jpg'
+
+# 幅を300px、高さを自動調整して表示
+
+
+st.title("💬 Chatbot") 
+st.image(img_path, width=120)
 st.write(
-    "This is a simple chatbot that uses OpenAI's GPT-3.5 model to generate responses. "
-    "To use this app, you need to provide an OpenAI API key, which you can get [here](https://platform.openai.com/account/api-keys). "
-    "You can also learn how to build this app step by step by [following our tutorial](https://docs.streamlit.io/develop/tutorials/llms/build-conversational-apps)."
-)
+    "This is a simple sample.it will be complete within few days "
+    )
+
+import streamlit as st
+
 
 # Ask user for their OpenAI API key via `st.text_input`.
 # Alternatively, you can store the API key in `./.streamlit/secrets.toml` and access it
 # via `st.secrets`, see https://docs.streamlit.io/develop/concepts/connections/secrets-management
-openai_api_key = st.text_input("OpenAI API Key", type="password")
+openai_api_key = st.text_input("API Key", type="password")
 if not openai_api_key:
-    st.info("Please add your OpenAI API key to continue.", icon="🗝️")
+    st.info("Please add your API key to continue.", icon="🗝️")
 else:
 
     # Create an OpenAI client.
