@@ -20,6 +20,7 @@ import streamlit as st
 # Alternatively, you can store the API key in `./.streamlit/secrets.toml` and access it
 # via `st.secrets`, see https://docs.streamlit.io/develop/concepts/connections/secrets-management
 openai_api_key = st.text_input("API Key", type="password")
+api_key = st.secrets["OPENAI_API_KEY"]
 if not openai_api_key:
     st.info("Please add your API key to continue.", icon="🗝️")
 else:
